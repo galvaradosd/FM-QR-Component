@@ -102,7 +102,7 @@ main {
   padding: var(--space-md);
   border-radius: 1.2rem;
   background-color: var(--clr-bg-main);
-  margin-top: 10rem;
+  margin-top: 13rem;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
@@ -140,7 +140,7 @@ main {
   font-size: var(--fs-base);
   color: var(--clr-text-main);
   font-family: "Outfit", sans-serif;
-  margin-top: 8rem;
+  margin-top: 6rem;
   margin-block-end: var(--space-md);
 }
 
