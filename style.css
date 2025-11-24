@@ -89,17 +89,23 @@ body {
   background-color: var(--clr-bg-secondary);
 }
 
+main {
+  display: flex;
+}
+
 .article__card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 20rem;
+  width: 100%;
+  max-width: 20rem;
   padding: var(--space-md);
   border-radius: 1.2rem;
   background-color: var(--clr-bg-main);
-  margin-top: auto;
+  margin-top: 10rem;
   margin-left: auto;
   margin-right: auto;
+  box-sizing: border-box;
 }
 
 .article__img {
@@ -108,7 +114,7 @@ body {
 }
 
 .article__title {
-  font-size: 1.3rem;
+  font-size: clamp(var(--fs-base), 1vw + 0.5rem, 1.2rem);
   margin: var(--space-sm) 0;
   text-align: center;
   font-weight: 800;
@@ -123,7 +129,8 @@ body {
   padding: 0 1rem;
   color: var(--clr-text-muted);
   line-height: 1.25;
-  text-wrap: pretty;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .attribution {
@@ -134,7 +141,7 @@ body {
   color: var(--clr-text-main);
   font-family: "Outfit", sans-serif;
   margin-top: 8rem;
-  margin-bottom: var(--space-sm);
+  margin-block-end: var(--space-md);
 }
 
 .attribution a {
