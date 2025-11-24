@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+/* 1. ORDEN DE PRECEDENCIA (La magia moderna) */
+@layer base, layout, components, utilities;
+
+@layer base {
+  :root {
+    /* -- COLORES (Semánticos) -- */
+    --clr-bg-main: hsl(0, 0%, 100%);
+    --clr-bg-secondary: hsl(212, 45%, 89%);
+    --clr-text-main: hsl(218, 44%, 22%);
+    --clr-text-muted: hsl(224, 4%, 51%);
+
+    /* -- TIPOGRAFÍA -- */
+    --ff-sans: "Outfit", sans-serif;
+    --fs-base: 1rem; /* 16px */
+    --fs-lg: 1.25rem;
+    --fs-xl: 2rem;
+
+    /* -- ESPACIADO (Consistencia rítmica) -- */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+
+    /* -- LAYOUT -- */
+    --container-max: 1200px;
+    --radius: 0.5rem;
+  }
+}
+@layer base {
+  /* Reset box-sizing para cálculos lógicos */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Márgenes fuera para control total */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Imágenes fluidas y bloque para evitar espacios fantasma */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Herencia de fuentes en inputs/buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  /* Configuración base del cuerpo */
+  body {
+    font-family: var(--ff-sans);
+    line-height: 1.6;
+    color: var(--clr-text-main);
+    background-color: var(--clr-bg-secondary);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Títulos con balance visual */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.1;
+    text-wrap: balance; /* Nueva propiedad moderna */
+    margin-bottom: var(--space-md);
+  }
+}
+
+body {
+  background-color: var(--clr-bg-secondary);
+}
+
+.article__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+  padding: var(--space-md);
+  border-radius: 1.2rem;
+  background-color: var(--clr-bg-main);
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article__img {
+  width: 100%;
+  border-radius: 0.7rem;
+}
+
+.article__title {
+  font-size: 1.3rem;
+  margin: var(--space-sm) 0;
+  text-align: center;
+  font-weight: 800;
+  padding: 0.5rem;
+  line-height: 1.3;
+}
+
+.article__text {
+  font-size: var(--fs-base);
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  color: var(--clr-text-muted);
+  line-height: 1.25;
+  text-wrap: pretty;
+}
+
+.attribution {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--fs-base);
+  color: var(--clr-text-main);
+  font-family: "Outfit", sans-serif;
+  margin-top: 5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.attribution a {
+  color: inherit;
+  text-decoration: none;
+}
+.attribution a:hover {
+  text-decoration: underline;
+  color: var(--clr-text-muted);
+}
